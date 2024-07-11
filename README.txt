@@ -68,27 +68,6 @@ npx tsx watch src/server.ts
   });
 
 
-app.get('/cadastrar', async () => {
-  return await prisma.trip
-    .create({
-      data: {
-        destination: 'Rio Azul',
-        starts_at: new Date(),
-        ends_at: new Date(),
-      },
-    })
-    .then(() => 'Registro cadastrado com sucesso!')
-    .catch(() => 'Falha ao cadastrar!');
-});
-
-app.get('/listar', async () => {
-  return await prisma.trip
-    .findMany()
-    .then(data => data)
-    .catch(error => error);
-});
-
-
 npm i zod
 npm i fastify-type-provider-zod
 
